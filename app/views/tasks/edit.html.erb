@@ -1,0 +1,23 @@
+<h1>Edit Tasks</h1>
+
+<div class="flex">
+<%= form_for(@task) do |f| %>
+  <%= f.label :title %>
+  <%= f.text_field :title %>
+<br>
+  <p>
+  <%= f.label :details %>
+  <%= f.text_field :details %>
+<br>
+  <%= f.label :completed %>
+  <%= f.check_box :completed %>
+</p>
+  <p><%= @task.completed ? "This task is completed" : "This task is not completed" %></p>
+<br>
+  <%= f.submit %>
+  <% end %>
+<br>
+</div>
+<div>
+  <%= link_to "Back to list", tasks_path %>
+</div>
